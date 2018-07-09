@@ -12,4 +12,4 @@ class UastPathsBagExtractor(BagsExtractor):
         self.uast2paths = Uast2BagOfPaths(max_length, max_width)
 
     def uast_to_bag(self, uast):
-        return self.uast2paths(uast)
+        return {str(path): 1 for path in self.uast2paths(uast)}

@@ -14,7 +14,7 @@ def code2vec(args):
     session_name = "code2vec-%s" % uuid4()
     root, start_point = create_uast_source(args, session_name)
 
-    start_point \
+    res = start_point \
         .link(UastRow2Document()) \
         .link(UastDeserializer()) \
         .link(Uast2BagFeatures([UastPathsBagExtractor(args.max_length, args.max_width)])) \
