@@ -27,7 +27,7 @@ class Uast2BagOfPaths(PickleableLogger):
         """
 
         path_contexts = get_paths(uast, self._max_length, self._max_width)
-        dict_of_paths = Counter(path_contexts)
+        dict_of_paths = {str(path): val for path, val in Counter(path_contexts).items()}
         self._log.info("Extracted paths successfully")
 
         from pprint import pprint
