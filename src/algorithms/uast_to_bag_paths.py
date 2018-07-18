@@ -30,9 +30,6 @@ class Uast2BagOfPaths(PickleableLogger):
         dict_of_paths = Counter(path_contexts)
         self._log.info("Extracted paths successfully")
 
-        from pprint import pprint
-        pprint(dict_of_paths)
-
         return dict_of_paths
 
     def _get_log_name(self):
